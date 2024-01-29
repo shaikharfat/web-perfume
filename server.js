@@ -15,10 +15,10 @@ const mysql = require("mysql2");
 // Create a connection object with the user details
 const connectionPool = mysql.createPool({
   connectionLimit: 1,
-  host: "127.0.0.1",
-  user: "root",
-  password: "root",
-  database: "perfume",
+  host: "bk5sdfgeloohxrleivml-mysql.services.clever-cloud.com",
+  user: "ukglmkakwvt3ahhu",
+  password: "sxR4X7yEur4emZaDYYkk",
+  database: "bk5sdfgeloohxrleivml",
   debug: false
 });
 

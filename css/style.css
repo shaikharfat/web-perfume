@@ -357,7 +357,7 @@ h1, h2, h3, h4, h5, h6,
   margin-bottom: 0.5rem;
   font-weight: 500;
   line-height: 1.2;
-  color: #1C1C1C;
+  color: #000000;
 }
 
 h1, .h1 {
@@ -9204,6 +9204,7 @@ button.bg-dark:focus {
 }
 
 .text-truncate {
+  text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -9366,7 +9367,7 @@ a.text-light:hover, a.text-light:focus {
 }
 
 .text-dark {
-  color: #1C1C1C !important;
+  color: #000 !important;
 }
 
 a.text-dark:hover, a.text-dark:focus {
@@ -9775,10 +9776,9 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .clear-icon {
-  position: absolute;
-  top: 50%;
-  right: 70px;
-  transform: translateY(-50%);
+  position: relative;
+  top: 12%;
+  right: 5%;
   cursor: pointer;
 }
 
@@ -9786,4 +9786,22 @@ a.text-dark:hover, a.text-dark:focus {
   width: 100%;
   height: 100%;
   object-fit: contain; /* or use "contain" based on your preference */
+}
+
+.centered-text {
+  text-align: center;
+  color: #6F6F6F;
+}
+
+.truncate-button {
+  max-width: 80px; /* Adjust the max-width as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.reset-button {
+  position: relative;
+  left: -28px;
+  margin: 0 14px; /* Adjust as needed for spacing */
 }

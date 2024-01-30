@@ -11038,13 +11038,17 @@ a.text-dark:focus {
 }
 
 .custom-searchbox {
-  width: 200px;
   position: relative;
   /* Make the container a positioned parent */
   flex: 2;
   /* Make the input take up more space */
   margin-right: 0px;
   /* Adjust the margin between the input and buttons */
+}
+@media (max-width: 480px) {
+  .custom-searchbox {
+    max-width: 200px;
+  }
 }
 
 .button-container {

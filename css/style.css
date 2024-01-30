@@ -9809,6 +9809,6 @@ a.text-dark:hover, a.text-dark:focus {
 
 @media (max-width: 767px) {
   input[type="text"] {
-    max-width: 80%; /* You can adjust this value based on your design */
+    max-width: 40% !important; /* You can adjust this value based on your design */
   }
 }

@@ -11038,7 +11038,7 @@ a.text-dark:focus {
 }
 
 .custom-searchbox {
-  width: 150px;
+  width: 200px;
   position: relative;
   /* Make the container a positioned parent */
   flex: 2;

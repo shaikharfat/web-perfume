@@ -409,12 +409,12 @@ h6, .h6 {
 }
 
 .dropdown {
-  position: absolute;
+  position: relative;
   display: inline-block;
 }
 
 .dropdown-content {
-  position: absolute;
+  position: relative;
   top: 100%;
   left: 83px;
   z-index: 1;
@@ -3062,7 +3062,7 @@ input[type="button"].btn-block {
 }
 
 .dropdown-menu {
-  position: absolute;
+  position: relative;
   top: 100%;
   left: 0;
   z-index: 1000;
@@ -6050,18 +6050,6 @@ a.close.disabled {
 
 .carousel-indicators .active {
   opacity: 1;
-}
-
-.carousel-caption {
-  position: absolute;
-  right: 15%;
-  bottom: 20px;
-  left: 15%;
-  z-index: 10;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  color: #fff;
-  text-align: center;
 }
 
 @keyframes spinner-border {
@@ -9550,7 +9538,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .search-box {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -9564,14 +9552,24 @@ a.text-dark:hover, a.text-dark:focus {
 
 
 .carousel-caption {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 1;
 }
-
+/* .carousel-caption {
+  position: relative;
+  right: 15%;
+  bottom: 20px;
+  left: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+} */
 .section-title {
   position: relative;
   display: inline-block;

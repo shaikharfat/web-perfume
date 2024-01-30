@@ -64,7 +64,7 @@
                         </div>
 
                         <!-- Search box -->
-                        <input ref="searchInput" type="text" @input="handleSearch($event)"placeholder="Search Perfumes" />
+                        <input ref="searchInput" type="text" @input="handleSearch($event)" placeholder="Search Perfumes" style="max-width: 100%;" />
                         <!-- Clear icon -->
                         <span v-if="$refs.searchInput" class="clear-icon" @click="clearSearch">&#10006;</span>
                         <div class="dropdown-content" v-if="showDropdown">

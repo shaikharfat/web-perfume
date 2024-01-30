@@ -9806,3 +9806,9 @@ a.text-dark:hover, a.text-dark:focus {
   left: -28px;
   margin: 0 14px; /* Adjust as needed for spacing */
 }
+
+@media (max-width: 767px) {
+  input[type="text"] {
+    max-width: 80%; /* You can adjust this value based on your design */
+  }
+}

@@ -5115,7 +5115,7 @@ input[type="button"].btn-block {
   color: #6c757d;
 }
 
-.pagination {
+/* .pagination {
   display: flex;
   padding-left: 0;
   list-style: none;
@@ -5175,7 +5175,7 @@ input[type="button"].btn-block {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
-}
+} */
 
 .badge {
   display: inline-block;

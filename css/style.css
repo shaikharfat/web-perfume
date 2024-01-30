@@ -487,6 +487,7 @@ li:hover {
   font-size: 3.5rem;
   font-weight: 300;
   line-height: 1.2;
+  text-align: center;
 }
 
 @media (max-width: 1200px) {

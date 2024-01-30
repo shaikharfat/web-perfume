@@ -10968,7 +10968,7 @@ a.text-dark:focus {
   white-space: nowrap;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 480px) {
   .truncate-button {
     position: absolute;
     left: 18px;
@@ -10995,7 +10995,7 @@ a.text-dark:focus {
   border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 480px) {
   .dropdown-menu {
     position: absolute;
     left: 18px;
@@ -11028,7 +11028,7 @@ a.text-dark:focus {
   flex: 3;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 480px) {
   input[type="text"] {
     max-width: 100% !important;
     /* You can adjust this value based on your design */
@@ -11057,7 +11057,7 @@ a.text-dark:focus {
   /* Center items vertically */
 }
 
-@media (max-width: 767px) {
+@media (max-width: 480px) {
   .p-3 {
     max-width: 50%;
   }

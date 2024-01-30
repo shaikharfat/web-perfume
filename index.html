@@ -249,8 +249,8 @@
                     methods: {
                         loadFragrances() {
                             const localApp = this;
-                            axios.get('http://localhost:8080/fragrances')
-                                //axios.get('https://web-perfume.onrender.com/fragrances')
+                            //axios.get('http://localhost:8080/fragrances')
+                                axios.get('https://web-perfume.onrender.com/fragrances')
                                 .then((response) => {
                                     console.log(response)
                                     localApp.perfumes = response.data;
@@ -286,8 +286,8 @@
                             this.selectedBrand = brand;
                             this.currentPage = 1;
 
-                            //axios.get(`https://web-perfume.onrender.com/brand?id=${brand}`)
-                            axios.get(`http://localhost:8080/brand?id=${brand}`)
+                            axios.get(`https://web-perfume.onrender.com/brand?id=${brand}`)
+                            //axios.get(`http://localhost:8080/brand?id=${brand}`)
                                 .then((response) => {
                                     console.log(response, "showBrandPerfumes")
                                     localApp.perfumes = response.data;

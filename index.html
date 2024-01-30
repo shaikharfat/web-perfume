@@ -67,7 +67,7 @@
                                 placeholder="Search Perfumes" />
                             <span v-if="$refs.searchInput" class="clear-icon" @click="clearSearch">&#10006;</span>
                             <!-- searcbox dropdown -->
-                            <div class="dropdown-content" v-if="showDropdown">
+                            <div class="dropdown-content" v-if="showDropdown" style="max-height: 250px; overflow-y: auto;">
                                 <ul>
                                     <li v-for="(perfume, index) in filteredPerfume" :key="index"
                                         @click="handleItemClick(perfume.Name)">
@@ -107,7 +107,7 @@
                                 </div>
                                 <h6 class="text-truncate mb-2" :class="{ 'scroll-text': isNameTooLong(perfume.Name) }">
                                     <marquee v-if="isMobile && isNameTooLong(perfume.Name)" behavior="scroll"
-                                        :direction="isNameTooLong(perfume.Name) ? 'left' : 'none'">
+                                        :direction="isNameTooLong(perfume.Name) ? 'left' : 'none'" scrollamount="5">
                                         {{ perfume.Name }}
                                     </marquee>
                                     <span v-else>{{ perfume.Name }}</span>
@@ -186,7 +186,7 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <p>Please select both a car brand and model name.</p>
+                                            <p>Server Busy. Please try again in some time.</p>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
@@ -249,8 +249,8 @@
                     methods: {
                         loadFragrances() {
                             const localApp = this;
-                            //axios.get('http://localhost:8080/fragrances')
-                                axios.get('https://web-perfume.onrender.com/fragrances')
+                            axios.get('http://localhost:8080/fragrances')
+                                //axios.get('https://web-perfume.onrender.com/fragrances')
                                 .then((response) => {
                                     console.log(response)
                                     localApp.perfumes = response.data;
@@ -286,8 +286,8 @@
                             this.selectedBrand = brand;
                             this.currentPage = 1;
 
-                            axios.get(`https://web-perfume.onrender.com/brand?id=${brand}`)
-                            //axios.get(`http://localhost:8080/brand?id=${brand}`)
+                            //axios.get(`https://web-perfume.onrender.com/brand?id=${brand}`)
+                            axios.get(`http://localhost:8080/brand?id=${brand}`)
                                 .then((response) => {
                                     console.log(response, "showBrandPerfumes")
                                     localApp.perfumes = response.data;

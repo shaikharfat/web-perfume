@@ -103,7 +103,7 @@
                                     <!-- Assuming "image_url" is a property in your perfume object -->
                                     <img v-if="perfume.image_url" :src="perfume.image_url" alt="Perfume Image"
                                         class="image-container" />
-                                    <img v-else src="img\RareCarbon-Product-01_1080x1080.webp" alt="Static Image"
+                                    <img v-else src="img\No_picture_available.png" alt="Static Image"
                                         class="image-container" />
                                 </div>
                                 <h6 class="text-truncate mb-2" :class="{ 'scroll-text': isNameTooLong(perfume.Name) }">

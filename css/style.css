@@ -11080,6 +11080,6 @@ a.text-dark:focus {
 @media (max-width: 480px) {
   .mb-4 {
     margin-top: 10%;
-    margin-bottom: 10px;
+    margin-bottom: 10px !important;
   }
 }

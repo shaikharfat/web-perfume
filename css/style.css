@@ -10955,7 +10955,7 @@ a.text-dark:focus {
 @media (max-width: 480px) {
   .image-container {
     width: 161px;
-    width: 161px;
+    height: 161px;
   }
 }
 

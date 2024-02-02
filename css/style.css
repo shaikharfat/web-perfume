@@ -10946,10 +10946,17 @@ a.text-dark:focus {
 }
 
 .image-container {
-  width: 100%;
-  height: 100%;
+  width: 417px;
+  height: 417px;
   object-fit: contain;
   /* or use "contain" based on your preference */
+}
+
+@media (max-width: 480px) {
+  .image-container {
+    width: 161px;
+    width: 161px;
+  }
 }
 
 .centered-text {

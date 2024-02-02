@@ -11076,3 +11076,10 @@ a.text-dark:focus {
 .button-container brand-button {
   flex: 1;
 }
+
+@media (max-width: 480px) {
+  .mb-4 {
+    margin-top: 10%;
+    margin-bottom: 10px;
+  }
+}

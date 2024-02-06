@@ -42,7 +42,7 @@ app.listen(PORT);
 
 
 const handlegetFragrance = (request, response) => {
-  connectionPool.query("SELECT * FROM fragrances3 WHERE rank_3 IS NOT NULL AND rank_3 <> ''", (err, result) => {
+  connectionPool.query("SELECT * FROM complete_set WHERE rank_2 IS NOT NULL AND rank_2 <> ''", (err, result) => {
     if (err) {
       response.status(HTTP_STATUS.INTERNAL_SERVER_ERROR);
       response.json({ "error": true, "message": +err });
@@ -56,7 +56,7 @@ const handlegetFragrance = (request, response) => {
 const handlegetbrand = (req, res) => {
   // Validate brandName if necessary...
   const brand = req.query.id;
-  let sqlPerfumeInBrand = "SELECT * FROM fragrances3 WHERE brand='" + brand + "'";
+  let sqlPerfumeInBrand = "SELECT * FROM complete_set WHERE brand='" + brand + "'";
   connectionPool.query(sqlPerfumeInBrand, (err, result) => {
     if (err) {
       // Not an ideal error code, but we don't know what has gone wrong.
@@ -70,7 +70,7 @@ const handlegetbrand = (req, res) => {
 }
 
 const handlegetAllbrands=(req,res)=>{
-  const query = 'SELECT DISTINCT Brand FROM fragrances3';
+  const query = 'SELECT DISTINCT Brand FROM complete_set';
 
   connectionPool.query(query, (err, result) => {
     if (err) {
@@ -85,7 +85,7 @@ const handlegetAllbrands=(req,res)=>{
 const handleGetPerfumeByName=(req, res)=>{
   const perfName = req.query.name;
 
-  const query = "SELECT * FROM fragrances3 WHERE name = '" + perfName + "'";
+  const query = "SELECT * FROM complete_set WHERE name = '" + perfName + "'";
   
   connectionPool.query(query, (err, result) => {
     if (err) {

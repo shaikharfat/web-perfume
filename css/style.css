@@ -11083,3 +11083,7 @@ a.text-dark:focus {
     margin-bottom: 10px !important;
   }
 }
+
+.darker-text {
+  color: #333; /* Darker color code */
+}

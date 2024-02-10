@@ -42,7 +42,7 @@ app.listen(PORT);
 
 
 const handlegetFragrance = (request, response) => {
-  connectionPool.query("SELECT * FROM complete_set WHERE rank_2 IS NOT NULL AND rank_2 <> ''", (err, result) => {
+  connectionPool.query("SELECT * FROM `complete_set` WHERE rank_3_seller IS NOT NULL AND rank_3_seller <> ''  ", (err, result) => {
     if (err) {
       response.status(HTTP_STATUS.INTERNAL_SERVER_ERROR);
       response.json({ "error": true, "message": +err });

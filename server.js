@@ -42,7 +42,7 @@ app.listen(PORT);
 
 
 const handlegetFragrance = (request, response) => {
-  connectionPool.query("SELECT * FROM `nitish_inc` WHERE rank_1_seller = 3", (err, result) => {
+  connectionPool.query("SELECT * FROM `nitish_inc`", (err, result) => {
     if (err) {
       response.status(HTTP_STATUS.INTERNAL_SERVER_ERROR);
       response.json({ "error": true, "message": +err });

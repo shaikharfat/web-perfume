@@ -71,7 +71,7 @@
                             <div class="dropdown-content" v-if="showDropdown"
                                 style="max-height: 250px; overflow-y: auto;">
                                 <ul>
-                                    <li v-for="(perfume, index) in filteredPerfume" :key="index"
+                                    <li v-for="(perfume, index) in perfume" :key="index"
                                         @click="handleItemClick(perfume.Name)">
                                         {{ perfume.Name }} - {{ perfume.Brand }}
                                     </li>

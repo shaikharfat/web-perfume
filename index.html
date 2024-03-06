@@ -56,7 +56,7 @@
                         </button>
                         <!-- Brands dropdown -->
                         <div class="dropdown-menu" :class="{ show: showBrandDropdown }" aria-labelledby="brandDropdown"
-                            style="max-height: 250px; overflow-y: auto;" ref="brandDropdown">
+                            style="max-height: 250px; overflow-y: auto;" ref="brandsDropdown">
                             <a class="dropdown-item" v-for="(brand, index) in brands" :key="index"
                                 @click="showBrandPerfumes(brand)">
                                 {{ brand }}
@@ -435,7 +435,7 @@
                         handleClickOutside(event) {
                             const target = event.target;
                             const searchInput = this.$refs.searchInput;
-                            const brandDropdown = this.$refs.brandDropdown;
+                            const brandsDropdown = this.$refs.brandsDropdown;
 
                             // Check if the click occurred outside the search box and dropdown content
                             if (!(searchInput.contains(target) || target.classList.contains('dropdown-content'))) {
@@ -443,7 +443,7 @@
                                 this.showDropdown = false;
                             }
 
-                            if (!brandDropdown.contains(target)) {
+                            if (!brandsDropdown.contains(target)) {
                                 // If the click occurred outside the brand dropdown menu, close the dropdown
                                 this.showBrandDropdown = false;
                             }

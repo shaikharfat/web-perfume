@@ -435,7 +435,7 @@
                         handleClickOutside(event) {
                             const target = event.target;
                             const searchInput = this.$refs.searchInput;
-                            this.toggleBrandDropdown();
+                            this.showBrandDropdown = false;
 
                             // Check if the click occurred outside the search box and dropdown content
                             if (!(searchInput.contains(target) || target.classList.contains('dropdown-content'))) {

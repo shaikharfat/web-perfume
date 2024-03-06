@@ -66,7 +66,7 @@
                         <div class="custom-searchbox">
                             <input ref="searchInput" type="text" @input="handleSearch($event)"
                                 placeholder="Search Perfumes" />
-                            <span v-if="$refs.searchInput" class="clear-icon" @click="clearSearch">&#10006;</span>
+                            <span v-if="$refs.searchInput" class="clear-icon" @click="clearSearchInput">&#10006;</span>
                             <!-- searcbox dropdown -->
                             <div class="dropdown-content" v-if="showDropdown"
                                 style="max-height: 250px; overflow-y: auto;">

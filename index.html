@@ -104,8 +104,8 @@
                                     <!-- Assuming "image_url" is a property in your perfume object -->
                                     <img v-if="perfume.image_url" :src="perfume.image_url" alt="Perfume Image"
                                         class="image-container" />
-                                    <img v-else src="https://ik.imagekit.io/levelup1lab/No_picture_available.png" alt="Static Image"
-                                        class="image-container" />
+                                    <img v-else src="https://ik.imagekit.io/levelup1lab/No_picture_available.png"
+                                        alt="Static Image" class="image-container" />
                                 </div>
                                 <h6 class="text-truncate mb-2" :class="{ 'scroll-text': isNameTooLong(perfume.Name) }">
                                     <marquee v-if="isMobile && isNameTooLong(perfume.Name)" behavior="scroll"
@@ -250,6 +250,15 @@
                             return Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i);
                         },
                     },
+                    mounted() {
+                        // Add event listener to the document body for click events
+                        document.body.addEventListener('click', this.handleClickOutside);
+                    },
+                    beforeDestroy() {
+                        // Remove event listener when component is destroyed to avoid memory leaks
+                        document.body.removeEventListener('click', this.handleClickOutside);
+                    },
+
                     methods: {
                         loadFragrances() {
                             const localApp = this;
@@ -401,7 +410,7 @@
                                         value && value.toString().toLowerCase().includes(searchQuery)
                                     )
                                 );
-                                console.log(localApp.filteredPerfume,"after filter")
+                                console.log(localApp.filteredPerfume, "after filter")
 
                                 // Update the 'filteredPerfume' property with the filtered results
                                 localApp.filteredPerfume = filteredPerfume;
@@ -431,6 +440,16 @@
                                     console.error('Error sending request to server:', error);
                                 });
                             this.showDropdown = false;
+                        },
+                        handleClickOutside(event) {
+                            // Get the target element of the click event
+                            const target = event.target;
+
+                            // Check if the click occurred inside the dropdown content
+                            if (!this.$refs.dropdownContent.contains(target)) {
+                                // If the click occurred outside the dropdown content, close all dropdowns
+                                this.showDropdown = false;
+                            }
                         },
 
                         clearSearch() {

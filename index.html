@@ -396,7 +396,7 @@
                                 console.log(localApp.orgPerfumes, "handle perf")
                                 console.log(this.filteredPerfume, "filtereede handle search")
                                 // Filter the perfumes array based on the search query
-                                const filteredPerfume = localApp.orgPerfumes.filter(perf =>
+                                const filteredPerfume = this.orgPerfumes.filter(perf =>
                                     Object.values(perf).some(value =>
                                         value && value.toString().toLowerCase().includes(searchQuery)
                                     )

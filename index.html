@@ -437,9 +437,9 @@
                             const target = event.target;
 
                             // Check if the click occurred inside the dropdown content
-                            if (!this.$refs.dropdownContent.contains(target)) {
+                            if (!this.$el.contains(target)) {
                                 // If the click occurred outside the dropdown content, close all dropdowns
-                                this.showBrandDropdown = false;
+                                this.showDropdown = false;
                                 this.showResults = false;
                             }
                         },
@@ -457,7 +457,7 @@
 
                         clearSearchInput() {
                             this.$refs.searchInput.value = '';
-                            this.handleSearch(); // Trigger search handling after clearing the input
+                            // this.handleSearch(); // Trigger search handling after clearing the input
                         },
 
                         changePage(action) {
@@ -473,7 +473,7 @@
                             });
                         }
                     },
-
+                    
                     mounted() {
                         // Add event listener to the document body for click events
                         document.body.addEventListener('click', this.handleClickOutside);

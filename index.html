@@ -216,7 +216,6 @@
                 const carRentalPriceComparison = new Vue({
                     el: "#app",
                     data: {
-                        clickedOutside: false,
                         sitename: "Perfumes",
                         currentPage: 1,
                         itemsPerPage: 12,
@@ -433,10 +432,13 @@
                                 });
                             this.showDropdown = false;
                         },
-                        handleClickOutside: (event) => {
+                        handleClickOutside(event) {
                             const target = event.target;
-                            if (!this.$refs.handleSearch) {
-                                // If the click occurred outside the dropdown content, close all dropdowns
+                            const searchInput = this.$refs.searchInput;
+
+                            // Check if the click occurred outside the search box and dropdown content
+                            if (!(searchInput.contains(target) || target.classList.contains('dropdown-content'))) {
+                                // If the click occurred outside the search box and dropdown content, close the dropdown
                                 this.showDropdown = false;
                             }
                         },

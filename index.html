@@ -56,7 +56,7 @@
                         </button>
                         <!-- Brands dropdown -->
                         <div class="dropdown-menu" :class="{ show: showBrandDropdown }" aria-labelledby="brandDropdown"
-                            style="max-height: 250px; overflow-y: auto;" ref="brandDropdown">
+                            style="max-height: 250px; overflow-y: auto;">
                             <a class="dropdown-item" v-for="(brand, index) in brands" :key="index"
                                 @click="showBrandPerfumes(brand)">
                                 {{ brand }}

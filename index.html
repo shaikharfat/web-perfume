@@ -71,7 +71,7 @@
                             <div class="dropdown-content" v-if="showDropdown"
                                 style="max-height: 250px; overflow-y: auto;">
                                 <ul>
-                                    <li v-for="(perfume, index) in filteredPerfume" :key="index"
+                                    <li v-for="(perfume, index) in perfumes" :key="index"
                                         @click="handleItemClick(perfume.Name)">
                                         {{ perfume.Name }} - {{ perfume.Brand }}
                                     </li>
@@ -104,7 +104,7 @@
                                     <!-- Assuming "image_url" is a property in your perfume object -->
                                     <img v-if="perfume.image_url" :src="perfume.image_url" alt="Perfume Image"
                                         class="image-container" />
-                                    <img v-else src="https://ik.imagekit.io/levelup1lab/No_picture_available.png?updatedAt=1709335898058" alt="Static Image"
+                                    <img v-else src="https://ik.imagekit.io/levelup1lab/No_picture_available.png" alt="Static Image"
                                         class="image-container" />
                                 </div>
                                 <h6 class="text-truncate mb-2" :class="{ 'scroll-text': isNameTooLong(perfume.Name) }">
@@ -221,6 +221,7 @@
                         itemsPerPage: 12,
                         isMobile: window.innerWidth <= 768,
                         PerfumeBrands: [],
+                        orgPerfumes: [],
                         perfumes: [],
                         filteredPerfume: [],
                         showDropdown: false,
@@ -257,6 +258,7 @@
                                 .then((response) => {
                                     console.log(response)
                                     localApp.perfumes = response.data;
+                                    localApp.orgPerfumes = response.data;
 
                                     // ... (other logic if needed)
                                 })
@@ -391,10 +393,10 @@
                             }
                             else if (searchQuery.trim().length >= 3) {
                                 console.log(e, "handle search")
-                                console.log(localApp.perfumes, "handle perf")
+                                console.log(localApp.orgPerfumes, "handle perf")
                                 console.log(this.filteredPerfume, "filtereede handle search")
                                 // Filter the perfumes array based on the search query
-                                const filteredPerfume = localApp.perfumes.filter(perf =>
+                                const filteredPerfume = localApp.orgPerfumes.filter(perf =>
                                     Object.values(perf).some(value =>
                                         value && value.toString().toLowerCase().includes(searchQuery)
                                     )

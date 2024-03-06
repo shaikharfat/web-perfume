@@ -435,7 +435,7 @@
                         },
                         handleClickOutside: (event) => {
                             const target = event.target;
-                            if (!this.$refs.handleSearch.contains(target)) {
+                            if (!this.$refs.handleSearch) {
                                 // If the click occurred outside the dropdown content, close all dropdowns
                                 this.showDropdown = false;
                             }

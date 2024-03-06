@@ -416,6 +416,7 @@
                             const localApp = this;
                             this.showResults = false;
                             this.currentPage = 1;
+                            localApp.selectedBrand = null;
                             // Send the selected perfume name to the server via a GET request
                             axios.get(`/getPerfumebySearch?name=${encodeURIComponent(name)}`)
                                 .then(response => {

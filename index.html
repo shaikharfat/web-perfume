@@ -435,7 +435,7 @@
                         },
                         handleClickOutside: (event) => {
                             const target = event.target;
-                            this.clickedOutside = !this.$el.contains(target);
+                            this.clickedOutside = !this.$handleSearch.contains(target);
                             console.log(this.clickedOutside, "clickedOutside")
                             if (this.clickedOutside) {
                                 this.showDropdown = false;

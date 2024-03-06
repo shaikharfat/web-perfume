@@ -250,15 +250,6 @@
                             return Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i);
                         },
                     },
-                    mounted() {
-                        // Add event listener to the document body for click events
-                        document.body.addEventListener('click', this.handleClickOutside);
-                    },
-                    beforeDestroy() {
-                        // Remove event listener when component is destroyed to avoid memory leaks
-                        document.body.removeEventListener('click', this.handleClickOutside);
-                    },
-
                     methods: {
                         loadFragrances() {
                             const localApp = this;
@@ -449,6 +440,7 @@
                             if (!this.$refs.dropdownContent.contains(target)) {
                                 // If the click occurred outside the dropdown content, close all dropdowns
                                 this.showDropdown = false;
+                                this.showResults = false;
                             }
                         },
 
@@ -480,6 +472,15 @@
                                 top: 0, // Optional: Adds smooth scrolling animation
                             });
                         }
+                    },
+                    
+                    mounted() {
+                        // Add event listener to the document body for click events
+                        document.body.addEventListener('click', this.handleClickOutside);
+                    },
+                    beforeDestroy() {
+                        // Remove event listener when component is destroyed to avoid memory leaks
+                        document.body.removeEventListener('click', this.handleClickOutside);
                     },
 
                     created() { // Vue lifecycle hook, called when data is loaded.

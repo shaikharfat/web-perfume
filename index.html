@@ -439,7 +439,7 @@
                             // Check if the click occurred inside the dropdown content
                             if (!this.$refs.dropdownContent.contains(target)) {
                                 // If the click occurred outside the dropdown content, close all dropdowns
-                                this.showDropdown = false;
+                                this.showBrandDropdown = false;
                                 this.showResults = false;
                             }
                         },
@@ -473,7 +473,7 @@
                             });
                         }
                     },
-                    
+
                     mounted() {
                         // Add event listener to the document body for click events
                         document.body.addEventListener('click', this.handleClickOutside);

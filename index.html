@@ -98,62 +98,67 @@
 
                         <div class="col-6 col-md-4 col-lg-3 border-0 mb-1" v-for="perfume in displayedPerfumes"
                             :key="perfume.ID">
-                            <div class="card product-item "
-                                style="background-color: rgb(255, 255, 255); display: flex; justify-content: center; align-items: center;">
+                            <!-- Card Item -->
+                            <div class="card product-item" style="background-color: rgb(255, 255, 255);">
+                                <!-- Product Image -->
                                 <div class="card-header product-img position-relative overflow-hidden p-0">
-                                    <!-- Assuming "image_url" is a property in your perfume object -->
                                     <img v-if="perfume.image_url" :src="perfume.image_url" alt="Perfume Image"
                                         class="image-container" />
                                     <img v-else src="https://ik.imagekit.io/levelup1lab/No_picture_available.png"
                                         alt="Static Image" class="image-container" />
                                 </div>
-                                <h6 class="text-truncate mb-2" :class="{ 'scroll-text': isNameTooLong(perfume.Name) }">
-                                    <marquee v-if="isMobile && isNameTooLong(perfume.Name)" behavior="scroll"
-                                        :direction="isNameTooLong(perfume.Name) ? 'left' : 'none'" scrollamount="5">
-                                        {{ perfume.Name }}
-                                    </marquee>
-                                    <span v-else>{{ perfume.Name }}</span>
-                                    <div class="centered-text">{{ perfume.Brand }}</div>
-                                </h6>
-                                <span style="font-size: 14px;">{{ perfume.Description }}</span>
-                                <div v-on:click="openWhatsApp(perfume.rank_1_seller, perfume.Brand, perfume.Name)"
-                                    class="card-footer text-center clickable-div py-1 border-top border-bottom">
-                                    <a class="btn btn-sm text-dark p-0 w-150 h-100" target="_blank">
-                                        <i class="fas fa-rupee-sign text-success mr-1"></i>
-                                        <span class="darker-text">{{perfume.rank_1}}</span>
-                                    </a>
-                                    <p class="mt-0 small p-0 pt-0 darker-text">
-                                        <i class="fab fa-whatsapp text-success mr-1"></i>
-                                        {{ getWhatsAppMessage(perfume.rank_1_seller) }}
-                                    </p>
+                                <!-- Product Details -->
+                                <div class="card-body">
+                                    <h6 class="text-truncate mb-2"
+                                        :class="{ 'scroll-text': isNameTooLong(perfume.Name) }">
+                                        <marquee v-if="isMobile && isNameTooLong(perfume.Name)" behavior="scroll"
+                                            :direction="isNameTooLong(perfume.Name) ? 'left' : 'none'" scrollamount="5">
+                                            {{ perfume.Name }}
+                                        </marquee>
+                                        <span v-else>{{ perfume.Name }}</span>
+                                    </h6>
+                                    <p class="mb-2">{{ perfume.Brand }}</p>
+                                    <p class="mb-2">{{ perfume.Description }}</p>
                                 </div>
-
-                                <div v-on:click="openWhatsApp(perfume.rank_2_seller,perfume.Brand, perfume.Name)"
-                                    class="card-footer text-center clickable-div py-1 border-top border-bottom">
-                                    <a class="btn btn-sm text-dark p-0 w-150 h-100" target="_blank">
-                                        <i class="fas fa-rupee-sign text-success mr-1"></i>
-                                        {{perfume.rank_2}}
-                                    </a>
-                                    <p class="mt-0 small p-0">
-                                        <i class="fab fa-whatsapp text-success mr-1"></i>
-                                        {{ getWhatsAppMessage(perfume.rank_2_seller) }}
-                                    </p>
-                                </div>
-                                <div v-on:click="openWhatsApp(perfume.rank_3_seller, perfume.Brand, perfume.Name)"
-                                    class="card-footer text-center clickable-div py-1 border-top border-bottom">
-                                    <a class="btn btn-sm text-dark p-0 w-150 h-100" target="_blank">
-                                        <i class="fas fa-rupee-sign text-success mr-1"></i>
-                                        {{perfume.rank_3}}
-                                    </a>
-                                    <p class="mt-0 small p-0">
-                                        <i class="fab fa-whatsapp text-success mr-1"></i>
-                                        {{ getWhatsAppMessage(perfume.rank_3_seller) }}
-                                    </p>
+                                <!-- Product Prices -->
+                                <div class="card-footer text-center clickable-div py-1 border-top border-bottom">
+                                    <!-- Price 1 -->
+                                    <div v-on:click="openWhatsApp(perfume.rank_1_seller, perfume.Brand, perfume.Name)">
+                                        <a class="btn btn-sm text-dark p-0 w-150 h-100" target="_blank">
+                                            <i class="fas fa-rupee-sign text-success mr-1"></i>
+                                            <span class="darker-text">{{perfume.rank_1}}</span>
+                                        </a>
+                                        <p class="mt-0 small p-0 pt-0 darker-text">
+                                            <i class="fab fa-whatsapp text-success mr-1"></i>
+                                            {{ getWhatsAppMessage(perfume.rank_1_seller) }}
+                                        </p>
+                                    </div>
+                                    <!-- Price 2 -->
+                                    <div v-on:click="openWhatsApp(perfume.rank_2_seller,perfume.Brand, perfume.Name)">
+                                        <a class="btn btn-sm text-dark p-0 w-150 h-100" target="_blank">
+                                            <i class="fas fa-rupee-sign text-success mr-1"></i>
+                                            {{perfume.rank_2}}
+                                        </a>
+                                        <p class="mt-0 small p-0">
+                                            <i class="fab fa-whatsapp text-success mr-1"></i>
+                                            {{ getWhatsAppMessage(perfume.rank_2_seller) }}
+                                        </p>
+                                    </div>
+                                    <!-- Price 3 -->
+                                    <div v-on:click="openWhatsApp(perfume.rank_3_seller, perfume.Brand, perfume.Name)">
+                                        <a class="btn btn-sm text-dark p-0 w-150 h-100" target="_blank">
+                                            <i class="fas fa-rupee-sign text-success mr-1"></i>
+                                            {{perfume.rank_3}}
+                                        </a>
+                                        <p class="mt-0 small p-0">
+                                            <i class="fab fa-whatsapp text-success mr-1"></i>
+                                            {{ getWhatsAppMessage(perfume.rank_3_seller) }}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-
-
                         </div>
+
                     </div>
                 </div>
             </div>

@@ -56,7 +56,7 @@ const handlegetFragrance = (request, response) => {
 const handlegetbrand = (req, res) => {
   // Validate brandName if necessary...
   const brand = req.query.id;
-  let sqlPerfumeInBrand = "SELECT * FROM nitish_inc WHERE brand='" + brand + "' ORDER BY brand ASC";
+  let sqlPerfumeInBrand = "SELECT * FROM nitish_inc WHERE brand='" + brand + "'";
   connectionPool.query(sqlPerfumeInBrand, (err, result) => {
     if (err) {
       // Not an ideal error code, but we don't know what has gone wrong.
@@ -70,7 +70,7 @@ const handlegetbrand = (req, res) => {
 }
 
 const handlegetAllbrands=(req,res)=>{
-  const query = 'SELECT DISTINCT Brand FROM nitish_inc';
+  const query = 'SELECT DISTINCT Brand FROM nitish_inc ORDER BY Brand ASC';
 
   connectionPool.query(query, (err, result) => {
     if (err) {

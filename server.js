@@ -56,7 +56,7 @@ const handlegetFragrance = (request, response) => {
 const handlegetbrand = (req, res) => {
   // Validate brandName if necessary...
   const brand = req.query.id;
-  let sqlPerfumeInBrand = "SELECT * FROM nitish_inc WHERE brand='" + brand + "'";
+  let sqlPerfumeInBrand = "SELECT * FROM nitish_inc WHERE brand='" + brand + "' ORDER BY brand ASC";
   connectionPool.query(sqlPerfumeInBrand, (err, result) => {
     if (err) {
       // Not an ideal error code, but we don't know what has gone wrong.

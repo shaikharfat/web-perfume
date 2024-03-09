@@ -10949,14 +10949,30 @@ a.text-dark:focus {
 .image-container {
   width: 417px;
   height: 417px;
-  object-fit: contain;
-  /* or use "contain" based on your preference */
+  object-fit: contain; /* or use "contain" based on your preference */
 }
 
-@media (max-width: 480px) {
+/* Media query for smaller screens */
+@media (max-width: 1199px) {
   .image-container {
-    width: 161px;
-    height: 161px;
+    width: 300px; /* Adjust width for smaller screens */
+    height: 300px; /* Adjust height accordingly */
+  }
+}
+
+/* Media query for tablets and medium-sized screens */
+@media (max-width: 991px) {
+  .image-container {
+    width: 250px; /* Adjust width for tablets */
+    height: 250px; /* Adjust height accordingly */
+  }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 767px) {
+  .image-container {
+    width: 200px; /* Adjust width for mobile devices */
+    height: 200px; /* Adjust height accordingly */
   }
 }
 

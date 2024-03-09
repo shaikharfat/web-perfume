@@ -10947,32 +10947,17 @@ a.text-dark:focus {
 }
 
 .image-container {
-  width: 417px;
-  height: 417px;
+  width: 100%; /* Initially set width to 100% to fill its parent container */
+  height: auto; /* Let the height adjust automatically to maintain aspect ratio */
+  max-width: 417px; /* Set a maximum width */
+  max-height: 417px; /* Set a maximum height */
   object-fit: contain; /* or use "contain" based on your preference */
 }
 
-/* Media query for smaller screens */
-@media (max-width: 1199px) {
+@media (max-width: 480px) {
   .image-container {
-    width: 300px; /* Adjust width for smaller screens */
-    height: 300px; /* Adjust height accordingly */
-  }
-}
-
-/* Media query for tablets and medium-sized screens */
-@media (max-width: 991px) {
-  .image-container {
-    width: 250px; /* Adjust width for tablets */
-    height: 250px; /* Adjust height accordingly */
-  }
-}
-
-/* Media query for mobile devices */
-@media (max-width: 767px) {
-  .image-container {
-    width: 200px; /* Adjust width for mobile devices */
-    height: 200px; /* Adjust height accordingly */
+    max-width: 161px; /* Adjust width for smaller screens */
+    max-height: 161px; /* Adjust height for smaller screens */
   }
 }
 
